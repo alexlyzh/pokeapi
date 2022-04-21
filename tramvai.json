@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/@tramvai/cli/schema.json",
+  "projects": {
+    "pokedex" : {
+      "name": "pokedex",
+      "root": "src",
+      "type": "application",
+      "commands": {
+        "build": {
+          "options": {
+            "server": "src/index.ts",
+            "vendor": "src/vendor.ts"
+          },
+          "configurations": {
+            "sourceMap": true,
+            "modern": true,
+            "granularChunks": true,
+            "postcss": {
+              "config": "src/postcss"
+            },
+            "alias": {
+              "~shared": "./src/shared",
+              "~entities": "./src/entities",
+              "~features": "./src/features",
+              "~widgets": "./src/widgets",
+              "~pages": "./src/pages",
+              "~processes": "./src/processes",
+              "~app": "./src/app"
+            },
+            "experiments": {
+              "fileSystemPages": {
+                "enable": true
+              }
+            }
+          }
+        },
+        "serve": {
+          "configurations": {
+            "hotRefresh": true,
+            "modern": true
+          }
+        }
+      }
+    }
+  }
+}
