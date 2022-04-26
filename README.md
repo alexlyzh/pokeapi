@@ -14,7 +14,7 @@ Run installation with selected package manager `npm install`
 ## Project structure
 
 * `src` - application source code
-  * `index.ts` - application entry point, where all tramvai modules are connected
+  * `model.ts` - application entry point, where all tramvai modules are connected
   * `vendor.ts` - file with vendor dependencies, will be extracted into a separate js chunk
   * `postcss.js` - postcss configuration object
   * `routes` - application pages

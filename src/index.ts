@@ -13,6 +13,7 @@ import {
 } from '@tramvai/tokens-render';
 import { HeaderModule } from '~shared/header';
 import { PokeApiModule } from '~shared/api';
+import { PokemonModule } from '~entities/pokemon';
 
 createApp({
   name: 'pokedex',
@@ -26,6 +27,7 @@ createApp({
     HeaderModule,
     HttpClientModule,
     PokeApiModule,
+    PokemonModule,
   ],
   providers: [
     {

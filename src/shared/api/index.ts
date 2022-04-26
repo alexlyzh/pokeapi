@@ -5,7 +5,9 @@ import { HTTP_CLIENT_FACTORY } from '@tramvai/module-http-client';
 
 const POKEAPI_BASE_URL = 'POKEAPI_BASE_URL';
 
-const POKEAPI_HTTP_CLIENT = createToken<HttpClient>('pokeapi HTTP client');
+export const POKEAPI_HTTP_CLIENT = createToken<HttpClient>(
+  'pokeapi HTTP client'
+);
 
 @Module({
   providers: [
