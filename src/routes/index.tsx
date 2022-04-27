@@ -4,6 +4,7 @@ import {
   PokemonPreview,
   PokemonsStore,
 } from '~entities/pokemon';
+import globalStyles from '../global.module.css';
 
 export const PokemonList = () => {
   const pokemons = useStore(PokemonsStore);
@@ -15,7 +16,7 @@ export const PokemonList = () => {
   }
 
   return (
-    <div>
+    <div className={globalStyles.container}>
       <ul>
         {pokemonList.map((pokemon) => (
           <li key={pokemon.name}>

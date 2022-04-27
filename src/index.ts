@@ -1,3 +1,4 @@
+import './global.module.css';
 import { createApp } from '@tramvai/core';
 import { CommonModule } from '@tramvai/module-common';
 import { SpaRouterModule } from '@tramvai/module-router';
@@ -38,6 +39,15 @@ createApp({
         slot: ResourceSlot.HEAD_META,
         payload:
           '<meta name="viewport" content="width=device-width, initial-scale=1">',
+      },
+    },
+    {
+      provide: RENDER_SLOTS,
+      multi: true,
+      useValue: {
+        type: ResourceType.style,
+        slot: ResourceSlot.HEAD_CORE_STYLES,
+        payload: 'https://fonts.googleapis.com/css2?family=Lato&display=swap',
       },
     },
   ],
