@@ -44,7 +44,7 @@ fieldset {
   border: none;
 }
 
-.container {
+:global(.container) {
   min-width: 720px;
   max-width: 960px;
   padding-left: 15px;

@@ -4,7 +4,6 @@ import { useDi } from '@tramvai/react';
 import { PAGE_SERVICE_TOKEN } from '@tramvai/tokens-router';
 import { fetchPokemonAction, PokemonsStore } from '~entities/pokemon';
 import type { Pokemon, PokemonStat } from '~entities/pokemon';
-import globalStyle from '../../../global.module.css';
 
 const findStatByName = (
   pokemon: Pokemon,
@@ -30,7 +29,7 @@ export const PokemonView = () => {
   const speedStat = findStatByName(pokemon, 'speed');
 
   return (
-    <div className={globalStyle.container}>
+    <div className="container">
       <div>
         <Link url="/">Return to list</Link>
       </div>

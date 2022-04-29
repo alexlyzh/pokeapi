@@ -1,8 +1,7 @@
 import styles from './Header.module.css';
-import globalStyles from '../../global.module.css';
 
 export const Header = () => (
-  <div className={globalStyles.container}>
+  <div className="container">
     <div className={styles.Header}>
       <img
         alt="pokeball"
