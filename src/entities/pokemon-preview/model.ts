@@ -37,13 +37,13 @@ export const fetchPokemonListAction = createAction({
     const limit = 10;
     const offset = 0;
 
-    // download a list of the names of the first 10 pokemon https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0
+    // download a list of the names of the first 10 pokemon-preview https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0
     const pokemonsNamesResponse = await deps.pokeapiHttpClient.get<{
       results: { name: string }[];
     }>('/pokemon', { query: { limit, offset } });
     const pokemonsNames = pokemonsNamesResponse.payload.results;
 
-    // download detailed information about each pokemon in parallel https://pokeapi.co/api/v2/pokemon/bulbasaur/
+    // download detailed information about each pokemon-preview in parallel https://pokeapi.co/api/v2/pokemon/bulbasaur/
     const pokemonList = await Promise.all(
       pokemonsNames.map(async ({ name }) => {
         const pokemonResponse = await deps.pokeapiHttpClient.get<Pokemon>(
@@ -71,11 +71,11 @@ export const fetchPokemonAction = createAction({
   fn: async (context, payload, deps) => {
     // access to the `:name` parameter of the current route via PAGE_SERVICE_TOKEN
     const { name } = await deps.pageService.getCurrentRoute().params;
-    // loading information about the pokemon
+    // loading information about the pokemon-preview
     const pokemonResponse = await deps.pokeapiHttpClient.get<Pokemon>(
       `/pokemon/${name}`
     );
-    // save information about the pokemon in the store
+    // save information about the pokemon-preview in the store
     await context.dispatch(pokemonLoadedEvent(pokemonResponse.payload));
   },
 });

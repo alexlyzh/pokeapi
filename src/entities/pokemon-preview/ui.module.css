@@ -1,0 +1,29 @@
+.pokemon {
+  width: 700px;
+  border-radius: 30px;
+  background-color: white;
+  overflow: hidden;
+  margin: 0 0 25px 0;
+  padding: 25px;
+}
+
+.pokemon a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  color: black;
+}
+
+.pokemon a:hover {
+  text-decoration: underline;
+}
+
+.img {
+  width: 100%;
+}

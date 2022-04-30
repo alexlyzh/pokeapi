@@ -2,8 +2,8 @@ import { Link } from '@tramvai/module-router';
 import { useStoreSelector } from '@tramvai/state';
 import { useDi } from '@tramvai/react';
 import { PAGE_SERVICE_TOKEN } from '@tramvai/tokens-router';
-import { fetchPokemonAction, PokemonsStore } from '~entities/pokemon';
-import type { Pokemon, PokemonStat } from '~entities/pokemon';
+import { fetchPokemonAction, PokemonsStore } from '~entities/pokemon-preview';
+import type { Pokemon, PokemonStat } from '~entities/pokemon-preview';
 
 const findStatByName = (
   pokemon: Pokemon,
