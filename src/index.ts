@@ -15,6 +15,7 @@ import {
 import { HeaderModule } from '~shared/header';
 import { PokeApiModule } from '~shared/api';
 import { PokemonModule } from '~entities/pokemon-preview';
+import { PapiTestModule } from '~shared/papi-test';
 
 createApp({
   name: 'pokedex',
@@ -29,6 +30,7 @@ createApp({
     HttpClientModule,
     PokeApiModule,
     PokemonModule,
+    PapiTestModule,
   ],
   providers: [
     {
