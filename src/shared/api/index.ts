@@ -1,4 +1,4 @@
-import { Module, provide, createToken } from '@tramvai/core';
+import { Module, createToken } from '@tramvai/core';
 import { ENV_MANAGER_TOKEN, ENV_USED_TOKEN } from '@tramvai/module-common';
 import type { HttpClient } from '@tramvai/module-http-client';
 import { HTTP_CLIENT_FACTORY } from '@tramvai/module-http-client';
@@ -11,7 +11,7 @@ export const POKEAPI_HTTP_CLIENT = createToken<HttpClient>(
 
 @Module({
   providers: [
-    provide({
+    {
       provide: ENV_USED_TOKEN,
       multi: true,
       useValue: [
@@ -21,8 +21,8 @@ export const POKEAPI_HTTP_CLIENT = createToken<HttpClient>(
           optional: true,
         },
       ],
-    }),
-    provide({
+    },
+    {
       provide: POKEAPI_HTTP_CLIENT,
       // all dependencies from deps will be taken from DI and passed to useFactory
       deps: {
@@ -37,7 +37,7 @@ export const POKEAPI_HTTP_CLIENT = createToken<HttpClient>(
           baseUrl: envManager.get(POKEAPI_BASE_URL),
         });
       },
-    }),
+    },
   ],
 })
 export class PokeApiModule {}
